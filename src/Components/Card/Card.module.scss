@@ -1,0 +1,87 @@
+.card {
+	transition: 0.3s;
+	border-bottom: 1px solid #fff;
+	padding: 20px;
+	width: 242px;
+	border-radius: 2ex;
+	margin: 10px 16px;
+	background-color: #fff;
+	box-shadow: 7px 7px 10px 3px rgba(77, 77, 77, 0.327);
+	animation: wrapperAnime 1s ease 1;
+
+	@keyframes wrapperAnime {
+		0% {
+			filter: blur(1rem);
+			transform: scale(0.9);
+		}
+		100% {
+			transform: scale(1);
+			filter: blur(0rem);
+		}
+	}
+	&:hover {
+		cursor: pointer;
+		transform: translateY(-6px);
+		background-color: rgba(255, 255, 255, 0.944);
+		box-shadow: 0px -5px 21px 4px rgba(61, 52, 52, 0.502);
+	}
+
+	.favorite {
+		position: absolute;
+		cursor: pointer;
+	}
+
+	h5 {
+		font-weight: 800;
+		font-size: 13px;
+		color: #3d4139;
+		margin: 7px 0px;
+	}
+	b {
+		margin-top: 2px;
+		font-weight: 600;
+		color: #222;
+		letter-spacing: 0.09rem;
+	}
+	.btnPlus {
+		background-color: transparent;
+		border: 1px solid #eefef2;
+		border-radius: 6px;
+		height: 32px;
+		width: 32px;
+		cursor: pointer;
+	}
+	.btnPlus img {
+		animation: btn 0.5s ease-in 1;
+	}
+	@keyframes btn {
+		0% {
+			transform: scale(0);
+		}
+
+		100% {
+			transform: scale(1);
+		}
+	}
+	.cost {
+		font-weight: 500;
+		color: rgba(188, 191, 151, 0.873);
+	}
+}
+
+.purchased {
+	position: relative;
+	background-color: #222;
+	width: 100%;
+	height: 100%;
+	span {
+		position: absolute;
+		top: 0;
+		font-weight: 600;
+		color: #fff;
+		right: -230px;
+		transform: rotate(45deg);
+		border-radius: 1.2ex;
+		background-color: red;
+	}
+}

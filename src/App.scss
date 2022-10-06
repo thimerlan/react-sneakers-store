@@ -1,0 +1,529 @@
+@import url(https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900);
+// @import url(https://fonts.googleapis.com/css?family=Crimson+Text:regular,italic,600,600italic,700,700italic);
+@import url(https://fonts.googleapis.com/css?family=Kameron:regular,700);
+
+body {
+	font-family: "Inter";
+	width: 100%;
+	height: 100%;
+	background-color: #181818;
+	overflow-x: hidden;
+	background-image: url("https://www.teahub.io/photos/full/82-825518_cool-sneakers-4k-hd.jpg");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	overflow-y: scroll;
+	background-attachment: fixed;
+}
+body::-webkit-scrollbar {
+	width: 13px;
+	border-radius: 1ex;
+	background-color: #4d634566;
+}
+body::-webkit-scrollbar:hover {
+	background-color: #a1b59a;
+}
+body::-webkit-scrollbar-thumb {
+	width: 10px;
+	border-radius: 0.8ex;
+	background-color: rgb(68, 79, 64);
+}
+button {
+	border: none;
+}
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+a {
+	text-decoration: none;
+	color: aqua;
+}
+ul li {
+	list-style-type: none;
+}
+.wrapper {
+	background: #f6fafa;
+	box-shadow: 0px 10px 20px rgba(34, 32, 32, 0.22);
+	border-radius: 5ex;
+	max-width: 1180px;
+	margin: 50px auto;
+	animation: wrapperAnime 1s ease 1;
+}
+@keyframes wrapperAnime {
+	0% {
+		filter: blur(1rem);
+		transform: scale(0.9);
+	}
+	100% {
+		transform: scale(1);
+		filter: blur(0rem);
+	}
+}
+header {
+	border: 1px solid #f4f4f4;
+	border-radius: 5ex;
+	.headerLeft {
+		img {
+			margin-right: 15px;
+		}
+	}
+	.headerRight {
+		display: flex;
+		align-items: center;
+		position: relative;
+	}
+	.cartProductLength {
+		font-family: "Kameron" !important;
+		position: absolute;
+		font-size: 15px;
+		top: -7px;
+		color: red;
+		font-weight: 600;
+	}
+}
+
+.search-input {
+	margin: 0px 10px;
+	transition: 0.3s;
+	border-radius: 1ex;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 250px;
+	height: 45px;
+	box-shadow: 0px 4px 5px 1px rgba(225, 33, 33, 0.274);
+	border: 1px solid #eee;
+	background-color: rgb(249, 249, 243);
+	&:hover {
+		box-shadow: 0px 4px 12px 1px rgba(225, 33, 33, 0.684);
+	}
+	img {
+		width: 20px;
+	}
+	input {
+		background-color: transparent;
+		outline: none;
+		padding: 10px 3px;
+		padding-left: 0px;
+		padding-right: 20px;
+		margin-right: 20px;
+		margin-left: 15px;
+		max-width: 250px;
+		min-width: 130px;
+		font-family: "Inter";
+		padding-right: 5px;
+
+		border: none;
+		&::placeholder {
+			width: 100%;
+			font-weight: 500;
+			padding: 15px;
+			font-size: 15px;
+			font-family: cursive;
+			color: rgb(41, 30, 30);
+		}
+	}
+	.clearInput {
+		color: #22e418;
+		position: absolute;
+		// padding-right: 10px;
+		right: 10px;
+	}
+}
+
+// =============
+.unoverlay {
+	background-image: url("https://img.freepik.com/premium-photo/fashion-sneakers-vivid-abstract-background-sport-shoes-neon-light-blue-orange-gradient_479776-7550.jpg?w=2000");
+	background-repeat: no-repeat;
+	background-position: left;
+	background-size: contain;
+	background-attachment: fixed;
+	transition: 0.5s ease;
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	// transform: translate(170%, -50%);
+	width: 100%;
+	height: 100%;
+	opacity: 1;
+	background-color: #222;
+	opacity: 0;
+	visibility: hidden;
+	z-index: 1;
+	.drawer {
+		display: flex;
+		flex-direction: column;
+		transform: translate(1001%) !important;
+		.items {
+			padding: 10px 15px;
+			overflow-x: hidden;
+			overflow-y: auto;
+			flex: 1;
+		}
+
+		position: absolute;
+		right: 0;
+		height: 100%;
+		padding: 30px;
+		width: 415px;
+		background-color: #fff;
+		box-shadow: -10px 4.2px 23.4px rgba(56, 54, 54, 0.404);
+
+		h2 {
+			font-weight: 662;
+			font-size: 2rem;
+			color: #222;
+		}
+
+		.cartItem {
+			margin-bottom: 20px;
+			animation: cartItem 0.5s ease-in 1 backwards;
+
+			&:hover {
+				animation: cartItemIn 0.5s ease-in 1 backwards;
+				border-bottom: 2px solid #98ab42;
+			}
+			@keyframes cartItem {
+				0% {
+					transform: rotate(2deg);
+				}
+				50% {
+					transform: rotate(-2deg);
+				}
+				100% {
+					transform: rotate(0deg);
+				}
+			}
+			@keyframes cartItemIn {
+				0% {
+					transform: rotate(2deg);
+				}
+				50% {
+					transform: rotate(-2deg);
+				}
+				100% {
+					transform: rotate(0deg);
+				}
+			}
+			border: 2px solid #b1b796;
+
+			border-radius: 2ex;
+			padding: 10px;
+			overflow: hidden;
+			p {
+				max-width: 161px;
+				line-height: 1.3;
+				text-align: center;
+				font-weight: 800;
+				font-size: 13px;
+				color: #3d4139;
+			}
+			b {
+				margin-left: 22px;
+				font-weight: 600;
+				color: #222;
+				letter-spacing: 0.09rem;
+			}
+			.removeBtn {
+				opacity: 0.5;
+				&:hover {
+					cursor: pointer;
+					opacity: 1;
+				}
+			}
+		}
+	}
+}
+.overlay {
+	background-image: url("https://img.freepik.com/premium-photo/fashion-sneakers-vivid-abstract-background-sport-shoes-neon-light-blue-orange-gradient_479776-7550.jpg?w=2000");
+	background-repeat: no-repeat;
+	background-position: left;
+	background-size: contain;
+	background-attachment: fixed;
+	transition: all 0.5s ease;
+	opacity: 1;
+	position: fixed;
+	left: 0;
+	top: 0;
+	background-color: rgba(17, 18, 17, 0.44);
+	height: 100%;
+	width: 100%;
+	z-index: 1;
+	overflow: hidden !important;
+	.drawer {
+		display: flex;
+		flex-direction: column;
+		transform: translate(0%);
+		animation: emptyCart 0.4s cubic-bezier(0.785, 0.135, 0.15, 0.86) 1 0.2s;
+		.items {
+			padding: 10px 15px;
+			overflow-x: hidden;
+			overflow-y: auto;
+			flex: 1;
+		}
+
+		position: absolute;
+		right: 0;
+		height: 100%;
+		padding: 30px;
+		width: 415px;
+		background-color: #fff;
+		box-shadow: -10px 4.2px 23.4px rgba(56, 54, 54, 0.404);
+
+		h2 {
+			font-weight: 662;
+			font-size: 2rem;
+			color: #222;
+		}
+
+		.cartItem {
+			margin-bottom: 20px;
+			animation: cartItem 0.5s ease-in 1 backwards;
+
+			&:hover {
+				animation: cartItemIn 0.5s ease-in 1 backwards;
+				border-bottom: 2px solid #98ab42;
+			}
+			@keyframes cartItem {
+				0% {
+					transform: rotate(2deg);
+				}
+				50% {
+					transform: scale(0);
+					transform: rotate(-2deg);
+				}
+				100% {
+					transform: scale(1);
+
+					transform: rotate(0deg);
+				}
+			}
+			@keyframes cartItemIn {
+				0% {
+					transform: rotate(2deg);
+				}
+				50% {
+					transform: rotate(-2deg);
+				}
+				100% {
+					transform: rotate(0deg);
+				}
+			}
+			border: 2px solid #b1b796;
+
+			border-radius: 2ex;
+			padding: 10px;
+			overflow: hidden;
+			p {
+				max-width: 161px;
+				line-height: 1.3;
+				text-align: center;
+				font-weight: 800;
+				font-size: 13px;
+				color: #3d4139;
+			}
+			b {
+				margin-left: 22px;
+				font-weight: 600;
+				color: #222;
+				letter-spacing: 0.09rem;
+			}
+			.removeBtn {
+				opacity: 0.5;
+				&:hover {
+					cursor: pointer;
+					opacity: 1;
+				}
+			}
+		}
+	}
+}
+.cartTotalBlock {
+	ul {
+		margin-bottom: 24px;
+	}
+	li {
+		display: flex;
+		align-items: flex-end;
+		margin: 10px 0px;
+	}
+	div {
+		flex: 1;
+		height: 1px;
+		border: 1px dashed #b1b796;
+		position: relative;
+		top: -4.1px;
+		margin: 0px 8px;
+	}
+	.animeBtn {
+		background-color: #8da28c !important;
+	}
+	.greenBtn {
+		position: relative;
+		border: 0;
+		width: 100%;
+		height: 55px;
+		background-color: #56f14e;
+		border-radius: 2ex;
+		color: rgb(255, 255, 255);
+		font-weight: 555;
+		font-size: 1em;
+		transition: 0.3s;
+
+		&:hover img {
+			animation: greenBtn 1s ease-in infinite;
+		}
+		img {
+			position: absolute;
+			right: 18%;
+			width: 20px;
+		}
+		&:hover {
+			cursor: pointer;
+			background-color: #22e418;
+		}
+		&:active {
+			background-color: #319a2be2;
+		}
+
+		@keyframes greenBtn {
+			0% {
+				transform: translate(0px);
+			}
+			10% {
+				transform: translate(5px);
+			}
+			50% {
+				transform: translate(-5px);
+			}
+			100% {
+				transform: translate(0px);
+			}
+		}
+	}
+}
+.emptyCart {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 100%;
+	height: 75%;
+	animation: emptyCartBody 0.4s linear 1;
+	img {
+		width: 122px;
+		margin: 0 auto;
+		// height: 150px;
+		margin-bottom: 20px;
+		object-fit: cover;
+		object-position: center;
+	}
+
+	.emtypBody {
+		text-align: center;
+
+		h2 {
+			font-weight: 600;
+			font-size: 22px;
+			line-height: 27px;
+			color: #000000;
+		}
+		h3 {
+			text-align: center;
+			margin: 15px 0px;
+			font-size: 16px;
+			line-height: 150%;
+			color: #000000;
+			opacity: 0.4;
+		}
+	}
+	.greenBtn {
+		position: relative;
+		border: 0;
+		width: 100%;
+		height: 55px;
+		background-color: #56f14e;
+		border-radius: 2ex;
+		color: rgb(255, 255, 255);
+		font-weight: 555;
+		font-size: 1em;
+		transition: 0.3s;
+		&:hover img {
+			animation: greenBtn 0.5s linear infinite;
+		}
+		img {
+			position: absolute;
+			left: 18%;
+			width: 20px;
+			transform: rotate(180deg);
+		}
+		&:hover {
+			cursor: pointer;
+			background-color: #22e418;
+		}
+		&:active {
+			background-color: #319a2be2;
+		}
+
+		@keyframes greenBtn {
+			0% {
+				transform: translate(-0px) rotate(180deg);
+			}
+			10% {
+				transform: translate(-5px) rotate(180deg);
+			}
+			50% {
+				transform: translate(-5px) rotate (180deg);
+			}
+			100% {
+				transform: translate(0px) rotate(180deg);
+			}
+		}
+
+		@keyframes emptyCartBody {
+			0% {
+				transform: scale(0);
+				opacity: 0;
+			}
+			100% {
+				transform: scale(1);
+
+				opacity: 1;
+			}
+		}
+	}
+}
+.Favorites {
+	animation: wrapperAnime 1s ease 1;
+}
+
+@keyframes wrapperAnime {
+	0% {
+		filter: blur(1rem);
+		transform: scale(0.9);
+	}
+	100% {
+		transform: scale(1);
+		filter: blur(0rem);
+	}
+}
+.activeFav {
+	box-shadow: inset 0px 0px 3px 2px rgb(244, 21, 21);
+}
+.skelet {
+	max-width: 1000px;
+	margin: 0 auto;
+}
+img {
+	animation: animeFav 0.5s ease 1;
+}
+@keyframes animeFav {
+	0% {
+		transform: scale(0.5);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
